@@ -1,0 +1,45 @@
+canvas {
+border:darkorange solid 5px;
+background-color: rgb(204, 236, 149);
+
+width:100%;
+height:100%;
+
+}
+ body {
+     background-color: darkseagreen;
+ }
+ 
+ #startBullet {
+ background-color: darkred;
+ width: 226px;
+ height: 45px;
+
+ }
+div {
+background-color: darkred;
+position:absolute;
+bottom: 0px;
+right:0px;
+width: 23px;
+height: 10px;
+border-radius: 35%;
+display:block;
+  }
+  #makeBullet{
+    background-color: darkgreen;
+    width:226px;
+    height: 45px;
+
+  }
+  #stopBullet{
+    background-color:darkslategray;
+    width:226px;
+    height: 45px;
+  }
+  .bullet{
+   font-size: xx-small; 
+   text-align: center;
+  font-weight: bold;
+color: rgb(73, 186, 201);
+  }
