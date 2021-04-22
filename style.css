@@ -2,8 +2,8 @@ canvas {
 border:darkorange solid 5px;
 background-color: rgb(204, 236, 149);
 
-width:100%;
-height:100%;
+width:75%;
+height:75%;
 
 }
  body {
@@ -21,8 +21,8 @@ background-color: darkred;
 position:absolute;
 bottom: 0px;
 right:0px;
-width: 23px;
-height: 10px;
+width: 43px;
+height: 20px;
 border-radius: 35%;
 display:block;
   }
@@ -38,8 +38,48 @@ display:block;
     height: 45px;
   }
   .bullet{
-   font-size: xx-small; 
+   font-size:medium; 
    text-align: center;
   font-weight: bold;
 color: rgb(73, 186, 201);
+  }
+  #score{
+    position: fixed;
+    width: 100px;
+    height: 64px;
+    bottom: 490px;
+    right: 100px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 30px;
+  }
+  #goal{
+    position:fixed;
+    right: 100px;
+    bottom:390px;
+    width: 100px;
+    height: 64px;
+    border-style: solid ;
+    /* border-top-color: rgb(56, 115, 173) ; */
+    border-color: rgb(56, 115, 173) ;;
+    border-radius: 0%;
+  
+    text-align: center;
+    font-size: x-large;
+    background-color: lawngreen;
+  }
+  #left{
+    position:fixed;
+    right: 100px;
+    bottom:290px;
+    width: 100px;
+    height: 64px;
+    border-style: solid;
+    /* border-top-color: olivedrab; */
+    border-color: olivedrab;
+    border-radius: 0%;
+    text-align: center;
+    font-size: x-large;
+    background-color:rgb(56, 115, 173)
+    
   }

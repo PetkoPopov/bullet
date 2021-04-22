@@ -8,11 +8,14 @@ var movingControl;
 var countBullet = -1
 var nummBullet;
 var summ=0 ;
+var speedBullet = 1000;
+var goal = Math.floor(Math.random()*200) ;
+var left=0;
 ///////////////////////////////////
 ///////////////////////////////////\
 
 var score = document.getElementById("score");
-
+score.innerHTML=summ;
 var startBullet = document.getElementById("startBullet");
 startBullet.addEventListener('click',
     () => {
@@ -22,14 +25,23 @@ startBullet.addEventListener('click',
         nummBullet = countBullet;
         newDiv.setAttribute("id", countBullet);
         newDiv.setAttribute("class", "bullet");
+
         document.body.appendChild(newDiv);
-        createBullet();
+        let bullet = createBullet();
+        
+newDiv.addEventListener('click',()=>{
+    summ+=bullet.power;
+    score.innerHTML=summ;
+    newDiv.style.display="none";
+})
         // let moveForward=
         // setInterval(moveBullet, 2000);
         //movingControl.push(moveForward);
         clearInterval(movingControl);
         movingControl =
-            setInterval(moveAllBulets, 1000);
+            setInterval(
+                moveAllBulets
+                , speedBullet);
 
     }
 
@@ -40,11 +52,11 @@ function moveAllBulets() {
     
         moveBullet(i);
     }
+    calc_goal_left();
 }
 /////////////////////////////
 function moveBullet(bullet) {
-    // let l = document.getElementsByTagName("div").length - 1;
-
+    
     if (typeof (bullet) == "undefined") {
         currentBullet = bullets.length - 1;
     } else {
@@ -60,15 +72,12 @@ function moveBullet(bullet) {
         testBullet.innerHTML = bullets[currentBullet].power;
        
 
-        testBullet.style.right = String(bullets[currentBullet].coorX) + "px";//scoor ;
+        testBullet.style.right = String(bullets[currentBullet].coorX) + "px";
         testBullet.style.bottom = String(bullets[currentBullet].coorY) + "px";
-        testBullet.addEventListener("click", () => {
-            testBullet.style.display="none";
-            summ+=bullets[currentBullet].power;   
-            score.innerHTML=summ;
-               
-        })
+    
     }
+    
+
 }
 
 
@@ -93,9 +102,15 @@ function createBullet() {
         countBullet: nummBullet
     };
     bullets.push(bullet);
-
+return bullet;
 }
-
+ 
+///////////////////////////////
+function calc_goal_left(){
+document.getElementById("goal").innerHTML="GOAL :<br/> "+goal;
+left = goal - summ;
+document.getElementById("left").innerHTML="LEFT : <br/>"+left;
+}
 
 
 
